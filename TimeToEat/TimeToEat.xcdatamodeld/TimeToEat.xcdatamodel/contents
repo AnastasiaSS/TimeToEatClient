@@ -1,4 +1,80 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1212" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Card" representedClassName="Card" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="number" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="total_sum" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="client" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="card" inverseEntity="Client" syncable="YES"/>
+    </entity>
+    <entity name="Client" representedClassName="Client" syncable="YES" codeGenerationType="class">
+        <attribute name="first_name" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="last_name" attributeType="String" syncable="YES"/>
+        <attribute name="patronymic" attributeType="String" syncable="YES"/>
+        <attribute name="phone" attributeType="String" syncable="YES"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Card" inverseName="client" inverseEntity="Card" syncable="YES"/>
+        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="client" inverseEntity="Order" syncable="YES"/>
+    </entity>
+    <entity name="Dish" representedClassName="Dish" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="price" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="pre_orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pre_order" inverseName="dish" inverseEntity="Pre_order" syncable="YES"/>
+        <relationship name="type" maxCount="1" deletionRule="Nullify" destinationEntity="Dish_type" inverseName="dishes" inverseEntity="Dish_type" syncable="YES"/>
+    </entity>
+    <entity name="Dish_type" representedClassName="Dish_type" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="dishes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Dish" inverseName="type" inverseEntity="Dish" syncable="YES"/>
+    </entity>
+    <entity name="Hall" representedClassName="Hall" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="tables_count" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="tables" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Table" inverseName="hall" inverseEntity="Table" syncable="YES"/>
+        <relationship name="type" maxCount="1" deletionRule="Nullify" destinationEntity="Hall_type" inverseName="halls" inverseEntity="Hall_type" syncable="YES"/>
+    </entity>
+    <entity name="Hall_type" representedClassName="Hall_type" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="halls" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hall" inverseName="type" inverseEntity="Hall" syncable="YES"/>
+    </entity>
+    <entity name="Order" representedClassName="Order" syncable="YES" codeGenerationType="class">
+        <attribute name="booking_pay" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pre_order_sum" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="client" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="orders" inverseEntity="Client" syncable="YES"/>
+        <relationship name="pre_order_menu" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Pre_order" inverseName="order" inverseEntity="Pre_order" syncable="YES"/>
+        <relationship name="table" maxCount="1" deletionRule="Nullify" destinationEntity="Table" inverseName="orders" inverseEntity="Table" syncable="YES"/>
+    </entity>
+    <entity name="Pre_order" representedClassName="Pre_order" syncable="YES" codeGenerationType="class">
+        <attribute name="count" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="dish" maxCount="1" deletionRule="Nullify" destinationEntity="Dish" inverseName="pre_orders" inverseEntity="Dish" syncable="YES"/>
+        <relationship name="order" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="pre_order_menu" inverseEntity="Order" syncable="YES"/>
+    </entity>
+    <entity name="Table" representedClassName="Table" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="persons_count" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="hall" maxCount="1" deletionRule="Nullify" destinationEntity="Hall" inverseName="tables" inverseEntity="Hall" syncable="YES"/>
+        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="table" inverseEntity="Order" syncable="YES"/>
+        <relationship name="type" maxCount="1" deletionRule="Nullify" destinationEntity="Table_type" inverseName="tables" inverseEntity="Table_type" syncable="YES"/>
+    </entity>
+    <entity name="Table_type" representedClassName="Table_type" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="tables" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Table" inverseName="type" inverseEntity="Table" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Card" positionX="18" positionY="36" width="128" height="103"/>
+        <element name="Client" positionX="-153" positionY="-13" width="128" height="148"/>
+        <element name="Dish" positionX="-288" positionY="-90" width="128" height="118"/>
+        <element name="Dish_type" positionX="-306" positionY="81" width="128" height="88"/>
+        <element name="Hall" positionX="196" positionY="-261" width="128" height="118"/>
+        <element name="Hall_type" positionX="178" positionY="-81" width="128" height="88"/>
+        <element name="Order" positionX="-137" positionY="-234" width="128" height="148"/>
+        <element name="Pre_order" positionX="-297" positionY="-252" width="128" height="88"/>
+        <element name="Table" positionX="16" positionY="-270" width="128" height="118"/>
+        <element name="Table_type" positionX="18" positionY="-79" width="128" height="88"/>
+    </elements>
 </model>

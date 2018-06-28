@@ -14,7 +14,7 @@
         <scene sceneID="0iV-kf-Bfo">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="3Vs-ai-Y9E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Booking" id="m1i-3N-soX"/>
+                    <tabBarItem key="tabBarItem" title="Booking" image="service_bell_filled_icon_50" id="m1i-3N-soX"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqi-45-iyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -30,7 +30,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="5rw-mc-cr3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Menu" id="Fq0-aK-zJb"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="restaurant_table_filled_icon_50" id="Fq0-aK-zJb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFl-bl-RhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,7 +46,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="hWk-hC-pLL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Clients" id="tfL-vv-wq5"/>
+                    <tabBarItem key="tabBarItem" title="Clients" image="people_filled_icon_50" id="tfL-vv-wq5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yj6-hA-1Xg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,7 +62,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="nzd-6L-D04"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Common" id="ICR-yS-Vyh"/>
+                    <tabBarItem key="tabBarItem" title="Common" image="bar_chart_filled_icon_50" id="ICR-yS-Vyh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ds-un-GcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,6 +76,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="brg-78-9cB" kind="relationship" relationship="viewControllers" id="SHQ-8B-L45"/>
@@ -89,4 +90,10 @@
             <point key="canvasLocation" x="139" y="488"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bar_chart_filled_icon_50" width="25" height="25"/>
+        <image name="people_filled_icon_50" width="25" height="25"/>
+        <image name="restaurant_table_filled_icon_50" width="25" height="25"/>
+        <image name="service_bell_filled_icon_50" width="25" height="25"/>
+    </resources>
 </document>

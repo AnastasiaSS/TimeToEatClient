@@ -13,6 +13,16 @@
 		BC3C21B720CD3C47006022CD /* TimeToEat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC3C21B520CD3C47006022CD /* TimeToEat.xcdatamodeld */; };
 		BC3C21B920CD3C48006022CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3C21B820CD3C48006022CD /* Assets.xcassets */; };
 		BC3C21BC20CD3C48006022CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3C21BA20CD3C48006022CD /* LaunchScreen.storyboard */; };
+		BC9A0CD620D99E91008E5E3D /* Dish_type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CD520D99E91008E5E3D /* Dish_type.swift */; };
+		BC9A0CD920D99F39008E5E3D /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CD820D99F39008E5E3D /* Dish.swift */; };
+		BC9A0CDB20D99F4C008E5E3D /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CDA20D99F4C008E5E3D /* Client.swift */; };
+		BC9A0CDD20D99F60008E5E3D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CDC20D99F60008E5E3D /* Card.swift */; };
+		BC9A0CDF20D99F75008E5E3D /* Hall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CDE20D99F75008E5E3D /* Hall.swift */; };
+		BC9A0CE120D99F87008E5E3D /* Hall_type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CE020D99F87008E5E3D /* Hall_type.swift */; };
+		BC9A0CE320D99FD0008E5E3D /* Table_type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CE220D99FD0008E5E3D /* Table_type.swift */; };
+		BC9A0CE520D99FE2008E5E3D /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CE420D99FE2008E5E3D /* Table.swift */; };
+		BC9A0CE720D99FFF008E5E3D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CE620D99FFF008E5E3D /* Order.swift */; };
+		BC9A0CE920D9A013008E5E3D /* Pre_order.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A0CE820D9A013008E5E3D /* Pre_order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		BC3C21B820CD3C48006022CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC3C21BB20CD3C48006022CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC3C21BD20CD3C48006022CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC9A0CD520D99E91008E5E3D /* Dish_type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish_type.swift; sourceTree = "<group>"; };
+		BC9A0CD820D99F39008E5E3D /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		BC9A0CDA20D99F4C008E5E3D /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		BC9A0CDC20D99F60008E5E3D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		BC9A0CDE20D99F75008E5E3D /* Hall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hall.swift; sourceTree = "<group>"; };
+		BC9A0CE020D99F87008E5E3D /* Hall_type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hall_type.swift; sourceTree = "<group>"; };
+		BC9A0CE220D99FD0008E5E3D /* Table_type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table_type.swift; sourceTree = "<group>"; };
+		BC9A0CE420D99FE2008E5E3D /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		BC9A0CE620D99FFF008E5E3D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		BC9A0CE820D9A013008E5E3D /* Pre_order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pre_order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 		BC3C21AD20CD3C47006022CD /* TimeToEat */ = {
 			isa = PBXGroup;
 			children = (
+				BC9A0CD720D99F09008E5E3D /* DataEntities */,
 				BC3C21AE20CD3C47006022CD /* AppDelegate.swift */,
 				BC3C21B020CD3C47006022CD /* ViewController.swift */,
 				BC3C21B220CD3C47006022CD /* Main.storyboard */,
@@ -65,6 +86,23 @@
 				BC3C21B520CD3C47006022CD /* TimeToEat.xcdatamodeld */,
 			);
 			path = TimeToEat;
+			sourceTree = "<group>";
+		};
+		BC9A0CD720D99F09008E5E3D /* DataEntities */ = {
+			isa = PBXGroup;
+			children = (
+				BC9A0CD520D99E91008E5E3D /* Dish_type.swift */,
+				BC9A0CD820D99F39008E5E3D /* Dish.swift */,
+				BC9A0CDA20D99F4C008E5E3D /* Client.swift */,
+				BC9A0CDC20D99F60008E5E3D /* Card.swift */,
+				BC9A0CDE20D99F75008E5E3D /* Hall.swift */,
+				BC9A0CE020D99F87008E5E3D /* Hall_type.swift */,
+				BC9A0CE220D99FD0008E5E3D /* Table_type.swift */,
+				BC9A0CE420D99FE2008E5E3D /* Table.swift */,
+				BC9A0CE620D99FFF008E5E3D /* Order.swift */,
+				BC9A0CE820D9A013008E5E3D /* Pre_order.swift */,
+			);
+			path = DataEntities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +178,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3C21B120CD3C47006022CD /* ViewController.swift in Sources */,
+				BC9A0CD920D99F39008E5E3D /* Dish.swift in Sources */,
+				BC9A0CDD20D99F60008E5E3D /* Card.swift in Sources */,
+				BC9A0CE120D99F87008E5E3D /* Hall_type.swift in Sources */,
+				BC9A0CE320D99FD0008E5E3D /* Table_type.swift in Sources */,
+				BC9A0CDB20D99F4C008E5E3D /* Client.swift in Sources */,
+				BC9A0CE920D9A013008E5E3D /* Pre_order.swift in Sources */,
+				BC9A0CE720D99FFF008E5E3D /* Order.swift in Sources */,
 				BC3C21B720CD3C47006022CD /* TimeToEat.xcdatamodeld in Sources */,
 				BC3C21AF20CD3C47006022CD /* AppDelegate.swift in Sources */,
+				BC9A0CDF20D99F75008E5E3D /* Hall.swift in Sources */,
+				BC9A0CD620D99E91008E5E3D /* Dish_type.swift in Sources */,
+				BC9A0CE520D99FE2008E5E3D /* Table.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
